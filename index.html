@@ -19,12 +19,13 @@
             color: white;
             text-align: center;
             padding: 60px 20px;
+            margin-bottom: 40px;
         }
 
         header h1 {
             font-size: 3rem;
             font-weight: 600;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
 
         header p {
@@ -47,6 +48,21 @@
             color: white;
         }
 
+        .test-button {
+            background: #1F4E79;
+            color: white;
+            padding: 15px 35px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-top: 20px;
+            display: inline-block;
+        }
+
+        .test-button:hover {
+            background: #0056b3;
+        }
+
         main {
             display: flex;
             justify-content: center;
@@ -56,8 +72,7 @@
 
         .main-content {
             display: flex;
-            flex-direction: row;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
             max-width: 1260px;
             width: 100%;
@@ -65,12 +80,25 @@
         }
 
         .text-content {
-            flex: 1;
+            width: 100%;
             padding: 20px;
+            background-color: #1F4E79;
+            color: white;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .text-content ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+
+        .text-content li {
+            margin: 10px 0;
         }
 
         .image-content {
-            flex: 1;
             text-align: center;
         }
 
@@ -85,19 +113,9 @@
         section h2 {
             font-size: 2rem;
             margin-bottom: 15px;
-            color: #1F4E79;
+            color: white;
             font-weight: 600;
-            text-align: left;
-        }
-
-        section ul {
-            list-style: none;
-            padding: 0;
-            text-align: left;
-        }
-
-        section li {
-            margin: 10px 0;
+            text-align: center;
         }
 
         .form-container {
@@ -156,7 +174,7 @@
 
     <main>
         <div class="main-content">
-            <!-- Блок "Почему выбирают нас" слева -->
+            <!-- Блок "Почему выбирают нас" сверху -->
             <div class="text-content">
                 <section id="about">
                     <h2>Почему выбирают нас?</h2>
@@ -168,7 +186,7 @@
                 </section>
             </div>
 
-            <!-- Блок "Как мы работаем" справа -->
+            <!-- Блок "Как мы работаем" снизу -->
             <div class="text-content">
                 <section id="working">
                     <h2>Как мы работаем?</h2>
@@ -187,6 +205,8 @@
                 <img src="https://avatars.mds.yandex.net/get-altay/14402904/2a00000192fb7dfa606c2b505515ff24f673/XXXL" alt="Изображение 2">
                 <img src="https://avatars.mds.yandex.net/get-altay/13925334/2a000001927640f536aa532edb94ec29bd87/XXXL" alt="Изображение 3">
             </div>
+            <!-- Кнопка пройти тест -->
+            <a href="https://mrqz.me/64a4337b1c739b00256b00a2" class="test-button" target="_blank">Пройти тест</a>
         </div>
     </main>
 
