@@ -162,6 +162,18 @@
         footer a:hover {
             text-decoration: underline;
         }
+
+        .video-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .video-container iframe {
+            width: 45%;
+            height: 250px;
+            border-radius: 10px;
+        }
     </style>
 </head>
 <body>
@@ -199,25 +211,10 @@
                 </section>
             </div>
 
-            <!-- Блок с изображениями -->
-            <div class="image-content">
-                <img src="https://avatars.mds.yandex.net/get-altay/14185024/2a00000193fd2935173a9f2697dba9410a7b/XXXL" alt="Изображение 1">
-                <img src="https://avatars.mds.yandex.net/get-altay/14402904/2a00000192fb7dfa606c2b505515ff24f673/XXXL" alt="Изображение 2">
-                <img src="https://avatars.mds.yandex.net/get-altay/13925334/2a000001927640f536aa532edb94ec29bd87/XXXL" alt="Изображение 3">
-            </div>
-
-            <!-- Вставка видео -->
-            <div style="text-align: center;">
-                <iframe
-                    width="720"
-                    height="405"
-                    src="https://rutube.ru/play/embed/4eef3e07055f209a31c94401ba31c1e0"
-                    frameBorder="0"
-                    allow="clipboard-write; autoplay"
-                    webkitAllowFullScreen
-                    mozallowfullscreen
-                    allowFullScreen
-                ></iframe>
+            <!-- Блок с видео по бокам -->
+            <div class="video-container">
+                <iframe src="https://rutube.ru/play/embed/82079e9b02b020f7457078299e55bc11" frameborder="0" allow="clipboard-write; autoplay" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                <iframe src="https://rutube.ru/play/embed/4eef3e07055f209a31c94401ba31c1e0" frameborder="0" allow="clipboard-write; autoplay" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
             </div>
 
             <!-- Кнопка пройти тест -->
