@@ -61,6 +61,7 @@
             align-items: center;
             max-width: 1260px;
             width: 100%;
+            gap: 40px;
         }
 
         .text-content {
@@ -74,8 +75,10 @@
         }
 
         .image-content img {
-            max-width: 100%;
+            width: 100%;
+            max-width: 400px;
             height: auto;
+            margin-bottom: 20px;
             border-radius: 10px;
         }
 
@@ -153,6 +156,7 @@
 
     <main>
         <div class="main-content">
+            <!-- Блок "Почему выбирают нас" слева -->
             <div class="text-content">
                 <section id="about">
                     <h2>Почему выбирают нас?</h2>
@@ -164,8 +168,24 @@
                 </section>
             </div>
 
+            <!-- Блок "Как мы работаем" справа -->
+            <div class="text-content">
+                <section id="working">
+                    <h2>Как мы работаем?</h2>
+                    <ul>
+                        <li>Оценка ситуации и консультация</li>
+                        <li>Подготовка документации для подачи в суд</li>
+                        <li>Заключение соглашения с кредиторами</li>
+                        <li>Юридическое сопровождение на всех этапах</li>
+                    </ul>
+                </section>
+            </div>
+
+            <!-- Блок с изображениями -->
             <div class="image-content">
-                <img src="https://avatars.mds.yandex.net/get-altay/13925334/2a000001927640f536aa532edb94ec29bd87/XXXL" alt="Logo">
+                <img src="https://avatars.mds.yandex.net/get-altay/14185024/2a00000193fd2935173a9f2697dba9410a7b/XXXL" alt="Изображение 1">
+                <img src="https://avatars.mds.yandex.net/get-altay/14402904/2a00000192fb7dfa606c2b505515ff24f673/XXXL" alt="Изображение 2">
+                <img src="https://avatars.mds.yandex.net/get-altay/13925334/2a000001927640f536aa532edb94ec29bd87/XXXL" alt="Изображение 3">
             </div>
         </div>
     </main>
