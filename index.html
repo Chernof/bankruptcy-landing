@@ -19,6 +19,7 @@
             color: white;
             text-align: center;
             padding: 60px 20px;
+            position: relative;
         }
 
         header h1 {
@@ -30,6 +31,16 @@
         header p {
             font-size: 1.2rem;
             margin: 10px 0;
+        }
+
+        header img {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
         }
 
         .cta-button {
@@ -79,39 +90,6 @@
             width: 250px;
         }
 
-        .card {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-top: 40px;
-        }
-
-        .card img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        .card-content {
-            max-width: 70%;
-        }
-
-        .card-content h3 {
-            margin: 0;
-            font-size: 1.5rem;
-            color: #333;
-        }
-
-        .card-content p {
-            margin-top: 10px;
-            color: #555;
-        }
-
         .form-container {
             background: white;
             padding: 30px;
@@ -141,48 +119,6 @@
             background: #0056b3;
         }
 
-        /* Калькулятор */
-        #calculator {
-            background: #e3f2fd;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            margin-bottom: 40px;
-        }
-
-        #calculator h2 {
-            font-size: 1.8rem;
-            text-align: center;
-            margin-bottom: 15px;
-            color: #1F4E79;
-        }
-
-        #calculator input,
-        #calculator button {
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            border-radius: 5px;
-            border: 1px solid #ddd;
-        }
-
-        #calculator button {
-            background: #1F4E79;
-            color: white;
-            cursor: pointer;
-        }
-
-        #calculator button:hover {
-            background: #0056b3;
-        }
-
-        #calculator .result {
-            font-size: 1.2rem;
-            font-weight: bold;
-            margin-top: 20px;
-            text-align: center;
-        }
-
         footer {
             background: #1F4E79;
             color: white;
@@ -206,6 +142,7 @@
         <h1>Юридическая Компания "Поддержка"</h1>
         <p>Списываем долги за 6 месяцев законно и без последствий</p>
         <a href="#form" class="cta-button">Получить бесплатную консультацию</a>
+        <img src="https://avatars.mds.yandex.net/get-altay/13925334/2a000001927640f536aa532edb94ec29bd87/XXXL" alt="Logo">
     </header>
 
     <main>
@@ -239,25 +176,6 @@
             </blockquote>
         </section>
 
-        <section id="calculator">
-            <h2>Кредитный калькулятор</h2>
-            <p>Узнайте, сколько вы можете сэкономить, списав долги!</p>
-            <form id="calcForm">
-                <label for="debtAmount">Сумма долга (руб.):</label>
-                <input type="number" id="debtAmount" name="debtAmount" required min="1" placeholder="Введите сумму долга">
-
-                <label for="interestRate">Процентная ставка (%):</label>
-                <input type="number" id="interestRate" name="interestRate" required min="1" placeholder="Введите процентную ставку">
-
-                <label for="loanTerm">Срок (месяцев):</label>
-                <input type="number" id="loanTerm" name="loanTerm" required min="1" placeholder="Введите срок займа">
-
-                <button type="button" onclick="calculateDebt()">Рассчитать</button>
-            </form>
-
-            <div id="result" class="result"></div>
-        </section>
-
         <section id="form">
             <h2>Оставьте заявку на бесплатную консультацию</h2>
             <div class="form-container">
@@ -269,9 +187,6 @@
                 </form>
             </div>
         </section>
-        <section>
-            <a href="https://mrqz.me/64a4337b1c739b00256b00a2" class="cta-button" target="_blank">Пройти тест</a>
-        </section>
     </main>
 
     <footer>
@@ -281,20 +196,6 @@
     </footer>
 
     <script>
-        function calculateDebt() {
-            const debtAmount = document.getElementById('debtAmount').value;
-            const interestRate = document.getElementById('interestRate').value;
-            const loanTerm = document.getElementById('loanTerm').value;
-
-            if (!debtAmount || !interestRate || !loanTerm) {
-                alert('Пожалуйста, заполните все поля');
-                return;
-            }
-
-            const total = debtAmount * (1 + (interestRate / 100)) * loanTerm;
-            document.getElementById('result').innerText = `Примерная сумма долга с процентами: ${total.toFixed(2)} рублей`;
-        }
-
         function sendToBitrix() {
             const name = document.getElementById('name').value;
             const phone = document.getElementById('phone').value;
@@ -305,7 +206,7 @@
                 return;
             }
 
-            const webhookUrl = 'https://ooopodderzhka.bitrix24.ru/rest/1/05niqwwd6b62uwrn/crm.lead.add.json';
+            const webhookUrl = 'https://ooopodderzhka.bitrix24.ru/rest/1/05niqwwd6b62uwrn/crm.lead.add';
             const data = {
                 fields: {
                     TITLE: 'Заявка с сайта',
@@ -326,13 +227,12 @@
                     alert('Спасибо! Ваша заявка отправлена.');
                     document.getElementById('leadForm').reset();
                 } else {
-                    alert('Ошибка при отправке заявки. Попробуйте позже.');
+                    alert('Ошибка при отправке заявки.');
                 }
             })
-            .catch(error => {
-                alert('Ошибка при отправке заявки. Попробуйте позже.');
-            });
+            .catch(error => alert('Ошибка при отправке заявки.'));
         }
     </script>
+
 </body>
 </html>
