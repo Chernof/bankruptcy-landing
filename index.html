@@ -5,234 +5,301 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Юридическая компания 'Поддержка' помогает физическим лицам списать долги законно и быстро. Получите бесплатную консультацию уже сегодня!">
     <title>ЮК "Поддержка" - Списание долгов законно</title>
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f7fb;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            background-color: #f9f9f9;
         }
+
         header {
-            background-color: #007BFF;
+            background: linear-gradient(135deg, #007BFF, #00BFFF);
             color: white;
-            padding: 30px;
             text-align: center;
+            padding: 40px 20px;
         }
+
         header h1 {
-            margin: 0;
-            font-size: 2.5em;
+            font-size: 2.5rem;
         }
+
         header p {
+            font-size: 1.2rem;
             margin: 10px 0;
-            font-size: 1.2em;
         }
-        header a {
-            background-color: #FFD700;
+
+        .cta-button {
+            background: #FFD700;
             color: #007BFF;
-            padding: 15px 30px;
-            font-weight: bold;
+            padding: 10px 25px;
             text-decoration: none;
+            font-weight: bold;
             border-radius: 5px;
-            font-size: 1.1em;
-            transition: background-color 0.3s ease;
+            transition: 0.3s;
         }
-        header a:hover {
-            background-color: #FFC107;
+
+        .cta-button:hover {
+            background: #FFCC00;
+            color: #ffffff;
         }
+
         main {
             padding: 40px 20px;
         }
+
         section {
             margin-bottom: 40px;
         }
+
         section h2 {
-            color: #007BFF;
-            font-size: 2em;
-            margin-bottom: 20px;
-        }
-        section ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        section ul li {
-            font-size: 1.2em;
-            margin-bottom: 10px;
-        }
-        section ol li {
-            font-size: 1.2em;
-            margin-bottom: 10px;
-        }
-        form input, form textarea {
-            width: 100%;
-            padding: 15px;
-            font-size: 1em;
-            border: 1px solid #ddd;
-            border-radius: 5px;
+            font-size: 1.8rem;
             margin-bottom: 15px;
         }
-        form button {
-            background-color: #007BFF;
-            color: white;
+
+        section ul, section ol {
+            list-style: none;
+            padding: 0;
+        }
+
+        section li {
+            background: #fff;
+            margin: 10px 0;
             padding: 15px;
-            font-size: 1.2em;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-        form button:hover {
-            background-color: #0056b3;
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-        }
-        footer p {
-            margin: 5px 0;
-        }
-        .social-links {
-            margin-top: 20px;
-        }
-        .social-links a {
-            margin: 0 15px;
-            font-size: 1.2em;
-            color: #007BFF;
-            text-decoration: none;
-        }
-        .social-links a:hover {
-            text-decoration: underline;
-        }
-        .reviews blockquote {
-            background-color: #fff;
+
+        #reviews blockquote {
+            background: #fff;
             padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid #00BFFF;
+            margin-bottom: 15px;
+        }
+
+        #team {
+            background: #f0f8ff;
+            padding: 40px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #team h2 {
+            font-size: 1.8rem;
+            text-align: center;
             margin-bottom: 20px;
         }
-        .reviews cite {
-            font-size: 1em;
-            color: #555;
-            display: block;
-            margin-top: 10px;
+
+        #team .person {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        #team .person img {
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            margin-right: 20px;
+        }
+
+        #team .person div {
+            font-size: 1.1rem;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer a {
+            color: #FFD700;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .form-container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .form-container input,
+        .form-container textarea,
+        .form-container button {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .form-container button {
+            background: #007BFF;
+            color: white;
+            cursor: pointer;
+        }
+
+        .form-container button:hover {
+            background: #0056b3;
+        }
+
+        /* Калькулятор */
+        #calculator {
+            background: #e3f2fd;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
+
+        #calculator h2 {
+            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        #calculator input,
+        #calculator button {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        #calculator button {
+            background: #007BFF;
+            color: white;
+            cursor: pointer;
+        }
+
+        #calculator button:hover {
+            background: #0056b3;
+        }
+
+        #calculator .result {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .cta-button {
+                font-size: 1rem;
+            }
+
+            section h2 {
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Юридическая Компания "Поддержка"</h1>
-    <p>Списываем долги за 6 месяцев законно и без последствий</p>
-    <a href="#form">Получить бесплатную консультацию</a>
-</header>
+    <header>
+        <h1>Юридическая Компания "Поддержка"</h1>
+        <p>Списываем долги за 6 месяцев законно и без последствий</p>
+        <a href="#form" class="cta-button">Получить бесплатную консультацию</a>
+    </header>
 
-<main>
-    <!-- О нас -->
-    <section id="about">
-        <h2>Почему выбирают нас?</h2>
-        <ul>
-            <li>Более 100 успешных кейсов по банкротству физических лиц</li>
-            <li>Опыт работы с долгами от 300 тысяч рублей</li>
-            <li>Полное сопровождение клиента на всех этапах</li>
-            <li>Мы работаем без скрытых комиссий и дополнительных расходов</li>
-        </ul>
-    </section>
+    <main>
+        <section id="about">
+            <h2>Почему выбирают нас?</h2>
+            <ul>
+                <li>Более 100 успешных кейсов</li>
+                <li>Опыт работы с долгами от 300 тысяч рублей</li>
+                <li>Полное сопровождение клиента на всех этапах</li>
+            </ul>
+        </section>
 
-    <!-- Как мы работаем -->
-    <section id="steps">
-        <h2>Как мы работаем?</h2>
-        <ol>
-            <li>Бесплатная консультация и анализ вашей ситуации</li>
-            <li>Сбор и подача документов в суд</li>
-            <li>Полное сопровождение до списания долгов</li>
-        </ol>
-    </section>
+        <section id="steps">
+            <h2>Как мы работаем?</h2>
+            <ol>
+                <li>Бесплатная консультация и анализ вашей ситуации</li>
+                <li>Сбор и подача документов в суд</li>
+                <li>Полное сопровождение до списания долгов</li>
+            </ol>
+        </section>
 
-    <!-- Отзывы -->
-    <section id="reviews" class="reviews">
-        <h2>Отзывы наших клиентов</h2>
-        <blockquote>
-            <p>"ЮК 'Поддержка' спасли меня от долгов. Я больше не боюсь звонков от коллекторов! Огромное спасибо за профессионализм."</p>
-            <cite>- Ольга, Москва</cite>
-        </blockquote>
-        <blockquote>
-            <p>"Моя жизнь изменилась к лучшему. Благодаря команде 'Поддержка' я списал долги и снова могу жить спокойно."</p>
-            <cite>- Иван, Подмосковье</cite>
-        </blockquote>
-        <p><a href="https://yandex.ru/maps/org/your_company" target="_blank">Читать больше отзывов на Яндекс.Картах</a></p>
-    </section>
+        <section id="reviews">
+            <h2>Отзывы наших клиентов</h2>
+            <blockquote>
+                <p>"ЮК 'Поддержка' спасли меня от долгов. Я больше не боюсь звонков от коллекторов! Огромное спасибо за профессионализм."</p>
+                <cite>- Ольга, Москва</cite>
+            </blockquote>
+            <blockquote>
+                <p>"Моя жизнь изменилась к лучшему. Благодаря команде 'Поддержка' я списал долги и снова могу жить спокойно."</p>
+                <cite>- Иван, Подмосковье</cite>
+            </blockquote>
+        </section>
 
-    <!-- Форма -->
-    <section id="form">
-        <h2>Оставьте заявку на бесплатную консультацию</h2>
-        <form id="leadForm">
-            <label for="name">Имя:</label>
-            <input type="text" id="name" name="name" required>
+        <section id="team">
+            <h2>Наши специалисты и довольные клиенты</h2>
+            <div class="person">
+                <img src="photo_bodrov.jpg" alt="Арбитражный управляющий Бодров Сергей Иванович">
+                <div>
+                    <strong>Бодров Сергей Иванович</strong><br>
+                    Арбитражный управляющий, специалист по банкротству физических лиц
+                </div>
+            </div>
+            <div class="person">
+                <img src="photo_client.jpg" alt="Довольный клиент">
+                <div>
+                    <strong>Довольный клиент</strong><br>
+                    «Прошел процедуру банкротства и списал все долги!»
+                </div>
+            </div>
+        </section>
 
-            <label for="phone">Телефон:</label>
-            <input type="tel" id="phone" name="phone" required>
+        <!-- Калькулятор -->
+        <section id="calculator">
+            <h2>Кредитный калькулятор</h2>
+            <p>Узнайте, сколько вы можете сэкономить, списав долги!</p>
+            <form id="calcForm">
+                <label for="debtAmount">Сумма долга (руб.):</label>
+                <input type="number" id="debtAmount" name="debtAmount" required min="1" placeholder="Введите сумму долга">
 
-            <label for="message">Кратко опишите вашу ситуацию:</label>
-            <textarea id="message" name="message" rows="4"></textarea>
+                <label for="interestRate">Процентная ставка (%):</label>
+                <input type="number" id="interestRate" name="interestRate" required min="1" placeholder="Введите процентную ставку">
 
-            <button type="button" onclick="sendToBitrix()">Отправить</button>
-        </form>
-    </section>
-</main>
+                <label for="loanTerm">Срок (месяцев):</label>
+                <input type="number" id="loanTerm" name="loanTerm" required min="1" placeholder="Введите срок займа">
 
-<footer>
-    <p>&copy; 2024 Юридическая Компания "Поддержка". Все права защищены.</p>
-    <p>Адрес: Москва, ул. Земляной Вал 1/4 c2</p>
-    <p>Телефон: +7 901 468-18-17</p>
-    <div class="social-links">
-        <a href="https://t.me/neplatipodolgam" target="_blank">Телеграм канал</a>
-        <a href="https://vk.com/spisanye_dolgov" target="_blank">ВКонтакте</a>
-    </div>
-</footer>
+                <button type="button" onclick="calculateDebt()">Рассчитать</button>
+            </form>
 
-<script>
-    function sendToBitrix() {
-        const name = document.getElementById('name').value;
-        const phone = document.getElementById('phone').value;
-        const message = document.getElementById('message').value;
+            <div id="result" class="result"></div>
+        </section>
 
-        if (!name || !phone) {
-            alert('Пожалуйста, заполните все обязательные поля!');
-            return;
-        }
+        <section id="form">
+            <h2>Оставьте заявку на бесплатную консультацию</h2>
+            <div class="form-container">
+                <form id="leadForm">
+                    <input type="text" id="name" name="name" placeholder="Ваше имя" required>
+                    <input type="tel" id="phone" name="phone" placeholder="Ваш телефон" required>
+                    <textarea id="message" name="message" rows="4" placeholder="Кратко опишите вашу ситуацию"></textarea>
+                    <button type="button" onclick="sendToBitrix()">Отправить</button>
+                </form>
+            </div>
+        </section>
+    </main>
 
-        const webhookUrl = 'https://ooopodderzhka.bitrix24.ru/rest/1/q5uae8r55w2y5cqb/crm.lead.add';
-        const data = {
-            fields: {
-                TITLE: 'Заявка с сайта',
-                NAME: name,
-                PHONE: [{ VALUE: phone, VALUE_TYPE: 'WORK' }],
-                COMMENTS: message,
-            }
-        };
-
-        fetch(webhookUrl, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(data),
-        })
-        .then(response => response.json())
-        .then(result => {
-            if (result.result) {
-                alert('Спасибо! Ваша заявка отправлена.');
-                document.getElementById('leadForm').reset();
-            } else {
-                alert('Ошибка при отправке заявки. Попробуйте позже.');
-            }
-        })
-        .catch(error => {
-            console.error('Ошибка:', error);
-            alert('Ошибка при отправке заявки.');
-        });
-    }
-</script>
-
-</body>
-</html>
+    <
