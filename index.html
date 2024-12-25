@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Юридическая компания 'Поддержка' помогает физическим лицам списать долги законно и быстро. Получите бесплатную консультацию уже сегодня!">
+    <title>ЮК "Поддержка" - Списание долгов законно</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header style="background: #007BFF; color: white; padding: 20px; text-align: center;">
+        <h1>Юридическая Компания "Поддержка"</h1>
+        <p>Списываем долги за 6 месяцев законно и без последствий</p>
+        <a href="#form" style="background: #FFD700; color: #007BFF; padding: 10px 20px; text-decoration: none; font-weight: bold;">Получить бесплатную консультацию</a>
+    </header>
+
+    <main style="padding: 20px; font-family: Arial, sans-serif;">
+        <section id="about" style="margin-bottom: 40px;">
+            <h2>Почему выбирают нас?</h2>
+            <ul>
+                <li>Более 100 успешных кейсов</li>
+                <li>Опыт работы с долгами от 300 тысяч рублей</li>
+                <li>Полное сопровождение клиента на всех этапах</li>
+            </ul>
+        </section>
+
+        <section id="steps" style="margin-bottom: 40px;">
+            <h2>Как мы работаем?</h2>
+            <ol>
+                <li>Бесплатная консультация и анализ вашей ситуации</li>
+                <li>Сбор и подача документов в суд</li>
+                <li>Полное сопровождение до списания долгов</li>
+            </ol>
+        </section>
+
+        <section id="reviews" style="margin-bottom: 40px;">
+            <h2>Отзывы наших клиентов</h2>
+            <blockquote>
+                <p>"ЮК 'Поддержка' спасли меня от долгов. Я больше не боюсь звонков от коллекторов! Огромное спасибо за профессионализм."</p>
+                <cite>- Ольга, Москва</cite>
+            </blockquote>
+            <blockquote>
+                <p>"Моя жизнь изменилась к лучшему. Благодаря команде 'Поддержка' я списал долги и снова могу жить спокойно."</p>
+                <cite>- Иван, Подмосковье</cite>
+            </blockquote>
+        </section>
+
+        <section id="form">
+            <h2>Оставьте заявку на бесплатную консультацию</h2>
+            <form id="leadForm" style="display: flex; flex-direction: column; gap: 10px; max-width: 400px; margin: auto;">
+                <label for="name">Имя:</label>
+                <input type="text" id="name" name="name" required style="padding: 10px;">
+
+                <label for="phone">Телефон:</label>
+                <input type="tel" id="phone" name="phone" required style="padding: 10px;">
+
+                <label for="message">Кратко опишите вашу ситуацию:</label>
+                <textarea id="message" name="message" rows="4" style="padding: 10px;"></textarea>
+
+                <button type="button" onclick="sendToBitrix()" style="background: #007BFF; color: white; padding: 10px 20px; border: none; font-size: 16px; cursor: pointer;">Отправить</button>
+            </form>
+        </section>
+    </main>
+
+    <footer style="background: #f1f1f1; text-align: center; padding: 20px; margin-top: 40px;">
+        <p>&copy; 2024 Юридическая Компания "Поддержка". Все права защищены.</p>
+        <p>Адрес: Москва, ул. Примерная, д. 1. Телефон: +7 (495) 123-45-67</p>
+    </footer>
+
+    <script>
+        function sendToBitrix() {
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const message = document.getElementById('message').value;
+
+            if (!name || !phone) {
+                alert('Пожалуйста, заполните все обязательные поля!');
+                return;
+            }
+
+            const webhookUrl = 'https://ooopodderzhka.bitrix24.ru/rest/1/q5uae8r55w2y5cqb/crm.lead.add';
+            const data = {
+                fields: {
+                    TITLE: 'Заявка с сайта',
+                    NAME: name,
+                    PHONE: [{ VALUE: phone, VALUE_TYPE: 'WORK' }],
+                    COMMENTS: message,
+                }
+            };
+
+            fetch(webhookUrl, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data),
+            })
+            .then(response => response.json())
+            .then(result => {
+                if (result.result) {
+                    alert('Спасибо! Ваша заявка отправлена.');
+                    document.getElementById('leadForm').reset();
+                } else {
+                    alert('Ошибка при отправке заявки. Попробуйте позже.');
+                }
+            })
+            .catch(error => {
+                console.error('Ошибка:', error);
+                alert('Ошибка при отправке заявки.');
+            });
+        }
+    </script>
+</body>
+</html>
