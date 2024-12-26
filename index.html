@@ -6,8 +6,22 @@
     <meta name="description" content="Юридическая компания 'Поддержка' помогает физическим лицам списать долги законно и быстро. Получите бесплатную консультацию уже сегодня!">
     <title>ЮК "Поддержка" - Списание долгов законно</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <script type="text/javascript" >
+        (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+        })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(99325525, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true
+        });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/99325525" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
     <style>
-        /* Стили сайта */
         body {
             font-family: 'Open Sans', sans-serif;
             margin: 0;
@@ -73,9 +87,8 @@
 
         .main-content {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: flex-start;
+            flex-direction: column;
+            align-items: center;
             max-width: 1260px;
             width: 100%;
             gap: 40px;
@@ -87,6 +100,7 @@
             background-color: #1F4E79;
             color: white;
             border-radius: 10px;
+            margin-bottom: 20px;
         }
 
         .text-content ul {
@@ -102,15 +116,31 @@
         .image-content {
             display: flex;
             justify-content: center;
-            flex-wrap: wrap;
             gap: 20px;
         }
 
         .image-content img {
             width: 100%;
-            max-width: 400px;
+            max-width: 300px;
             height: auto;
+            margin-bottom: 20px;
             border-radius: 10px;
+        }
+
+        .video-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1260px;
+            margin: 20px 0;
+        }
+
+        .video-content iframe {
+            width: 48%;
+            height: 405px;
+            border-radius: 10px;
+            border: none;
         }
 
         section h2 {
@@ -128,6 +158,7 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             max-width: 600px;
             margin: 40px auto;
+            text-align: center;
         }
 
         .form-container input,
@@ -165,33 +196,101 @@
         footer a:hover {
             text-decoration: underline;
         }
-
-        iframe {
-            border-radius: 10px;
-            margin: 20px;
-        }
     </style>
-
-    <!-- Яндекс.Метрика -->
-    <script type="text/javascript">
-        (function(m,e,t,r,i,k,a){
-            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-            m[i].l=1*new Date();
-            k=e.createElement(t),a=e.getElementsByTagName(t)[0],
-            k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-        ym(99325525, "init", {
-            clickmap:true,
-            trackLinks:true,
-            accurateTrackBounce:true
-        });
-    </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/99325525" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-    <!-- /Яндекс.Метрика -->
-
 </head>
 <body>
-    <!-- Здесь будет остальная часть вашего сайта -->
-</body>
-</html>
+
+    <header>
+        <h1>Юридическая Компания "Поддержка"</h1>
+        <p>Списываем долги за 6 месяцев законно и без последствий</p>
+        <a href="#form" class="cta-button">Получить бесплатную консультацию</a>
+    </header>
+
+    <main>
+        <div class="main-content">
+            <!-- Блок "Почему выбирают нас" -->
+            <div class="text-content">
+                <section id="about">
+                    <h2>Почему выбирают нас?</h2>
+                    <ul>
+                        <li>Более 100 успешных кейсов</li>
+                        <li>Опыт работы с долгами от 300 тысяч рублей</li>
+                        <li>Полное сопровождение клиента на всех этапах</li>
+                    </ul>
+                </section>
+            </div>
+
+            <!-- Блок с видео -->
+            <div class="video-content">
+                <iframe src="https://rutube.ru/play/embed/4eef3e07055f209a31c94401ba31c1e0" frameborder="0" allow="clipboard-write; autoplay" allowfullscreen></iframe>
+                <iframe src="https://rutube.ru/play/embed/82079e9b02b020f7457078299e55bc11" frameborder="0" allow="clipboard-write; autoplay" allowfullscreen></iframe>
+            </div>
+
+            <!-- Блок с изображениями -->
+            <div class="image-content">
+                <img src="https://avatars.mds.yandex.net/get-altay/14185024/2a00000193fd2935173a9f2697dba9410a7b/XXXL" alt="Изображение 1">
+                <img src="https://avatars.mds.yandex.net/get-altay/14402904/2a00000192fb7dfa606c2b505515ff24f673/XXXL" alt="Изображение 2">
+                <img src="https://avatars.mds.yandex.net/get-altay/13925334/2a000001927640f536aa532edb94ec29bd87/XXXL" alt="Изображение 3">
+            </div>
+
+            <!-- Блок "Как мы работаем" -->
+            <div class="text-content">
+                <section id="working">
+                    <h2>Как мы работаем?</h2>
+                    <ul>
+                        <li>Оценка ситуации и консультация</li>
+                        <li>Подготовка документации для подачи в суд</li>
+                        <li>Заключение соглашения с кредиторами</li>
+                        <li>Юридическое сопровождение на всех этапах</li>
+                    </ul>
+                </section>
+            </div>
+
+            <!-- Кнопка пройти тест -->
+            <a href="https://mrqz.me/64a4337b1c739b00256b00a2" class="test-button" target="_blank">Пройти тест</a>
+        </div>
+    </main>
+
+    <section id="form">
+        <h2>Оставьте заявку на бесплатную консультацию</h2>
+        <div class="form-container">
+            <form id="leadForm">
+                <input type="text" id="name" name="name" placeholder="Ваше имя" required>
+                <input type="tel" id="phone" name="phone" placeholder="Ваш телефон" required>
+                <textarea id="message" name="message" rows="4" placeholder="Кратко опишите вашу ситуацию"></textarea>
+                <button type="button" onclick="sendToBitrix()">Отправить</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Юридическая Компания "Поддержка". Все права защищены.</p>
+        <p><a href="https://yandex.ru/maps">Посетить нас на Яндекс.Картах</a></p>
+        <p>Телеграм: <a href="https://t.me/neplatipodolgam">https://t.me/neplatipodolgam</a> | ВКонтакте: <a href="https://vk.com/spisanye_dolgov">https://vk.com/spisanye_dolgov</a></p>
+    </footer>
+
+    <script>
+        function sendToBitrix() {
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const message = document.getElementById('message').value;
+
+            if (!name || !phone) {
+                alert('Пожалуйста, заполните все обязательные поля!');
+                return;
+            }
+
+            const webhookUrl = 'https://ooopodderzhka.bitrix24.ru/rest/1/05niqwwd6b62uwrn/crm.lead.add';
+            const data = {
+                fields: {
+                    TITLE: 'Заявка с сайта',
+                    NAME: name,
+                    PHONE: [{ VALUE: phone, VALUE_TYPE: 'WORK' }],
+                    COMMENTS: message,
+                }
+            };
+
+            fetch(webhookUrl, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON
