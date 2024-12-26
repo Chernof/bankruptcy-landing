@@ -4,23 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Юридическая компания 'Поддержка' помогает физическим лицам списать долги законно и быстро. Получите бесплатную консультацию уже сегодня!">
+    <meta name="yandex-verification" content="5566789a9b31e458">
     <title>ЮК "Поддержка" - Списание долгов законно</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    <script type="text/javascript" >
-        (function(m,e,t,r,i,k,a){
-            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-            m[i].l=1*new Date();
-            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-        })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-        ym(99325525, "init", {
-            clickmap:true,
-            trackLinks:true,
-            accurateTrackBounce:true
-        });
-    </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/99325525" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-
     <style>
         body {
             font-family: 'Open Sans', sans-serif;
@@ -80,7 +66,7 @@
 
         main {
             display: flex;
-            flex-direction: column;
+            justify-content: center;
             align-items: center;
             padding: 50px 20px;
         }
@@ -114,33 +100,15 @@
         }
 
         .image-content {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
+            text-align: center;
         }
 
         .image-content img {
             width: 100%;
-            max-width: 300px;
+            max-width: 400px;
             height: auto;
             margin-bottom: 20px;
             border-radius: 10px;
-        }
-
-        .video-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            max-width: 1260px;
-            margin: 20px 0;
-        }
-
-        .video-content iframe {
-            width: 48%;
-            height: 405px;
-            border-radius: 10px;
-            border: none;
         }
 
         section h2 {
@@ -158,7 +126,6 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             max-width: 600px;
             margin: 40px auto;
-            text-align: center;
         }
 
         .form-container input,
@@ -208,7 +175,7 @@
 
     <main>
         <div class="main-content">
-            <!-- Блок "Почему выбирают нас" -->
+            <!-- Блок "Почему выбирают нас" сверху -->
             <div class="text-content">
                 <section id="about">
                     <h2>Почему выбирают нас?</h2>
@@ -220,20 +187,7 @@
                 </section>
             </div>
 
-            <!-- Блок с видео -->
-            <div class="video-content">
-                <iframe src="https://rutube.ru/play/embed/4eef3e07055f209a31c94401ba31c1e0" frameborder="0" allow="clipboard-write; autoplay" allowfullscreen></iframe>
-                <iframe src="https://rutube.ru/play/embed/82079e9b02b020f7457078299e55bc11" frameborder="0" allow="clipboard-write; autoplay" allowfullscreen></iframe>
-            </div>
-
-            <!-- Блок с изображениями -->
-            <div class="image-content">
-                <img src="https://avatars.mds.yandex.net/get-altay/14185024/2a00000193fd2935173a9f2697dba9410a7b/XXXL" alt="Изображение 1">
-                <img src="https://avatars.mds.yandex.net/get-altay/14402904/2a00000192fb7dfa606c2b505515ff24f673/XXXL" alt="Изображение 2">
-                <img src="https://avatars.mds.yandex.net/get-altay/13925334/2a000001927640f536aa532edb94ec29bd87/XXXL" alt="Изображение 3">
-            </div>
-
-            <!-- Блок "Как мы работаем" -->
+            <!-- Блок "Как мы работаем" снизу -->
             <div class="text-content">
                 <section id="working">
                     <h2>Как мы работаем?</h2>
@@ -246,6 +200,12 @@
                 </section>
             </div>
 
+            <!-- Блок с изображениями -->
+            <div class="image-content">
+                <img src="https://avatars.mds.yandex.net/get-altay/14185024/2a00000193fd2935173a9f2697dba9410a7b/XXXL" alt="Изображение 1">
+                <img src="https://avatars.mds.yandex.net/get-altay/14402904/2a00000192fb7dfa606c2b505515ff24f673/XXXL" alt="Изображение 2">
+                <img src="https://avatars.mds.yandex.net/get-altay/13925334/2a000001927640f536aa532edb94ec29bd87/XXXL" alt="Изображение 3">
+            </div>
             <!-- Кнопка пройти тест -->
             <a href="https://mrqz.me/64a4337b1c739b00256b00a2" class="test-button" target="_blank">Пройти тест</a>
         </div>
@@ -293,4 +253,20 @@
             fetch(webhookUrl, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON
+                body: JSON.stringify(data),
+            })
+            .then(response => response.json())
+            .then(result => {
+                if (result.result) {
+                    alert('Спасибо! Ваша заявка отправлена.');
+                    document.getElementById('leadForm').reset();
+                } else {
+                    alert('Ошибка при отправке заявки.');
+                }
+            })
+            .catch(error => alert('Ошибка при отправке заявки.'));
+        }
+    </script>
+
+</body>
+</html>
